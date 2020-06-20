@@ -38,6 +38,7 @@ namespace sampleapi
             });
             //services.AddScoped<IfcTestRepo, MockTestRepo>();
             services.AddScoped<IfcTestRepo, SqlTestRepo>();
+            services.AddScoped<IQuestionBankRepo, SqlQuestionBankRepo>();
             //Automapper for Dto
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }

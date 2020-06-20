@@ -1,9 +1,15 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using sampleapi.Models;
 
 namespace sampleapi.Dtos
 {
     public class TestCreateDto
     {
+        public TestCreateDto()
+        {
+            this.Questions = new List<QuestionBank>();
+        }
         [Required]
         public string id { get; set; }
 
@@ -18,5 +24,8 @@ namespace sampleapi.Dtos
         [Required]
         [MaxLength(50)]
         public string TestDuration { get; set; }
+
+        public List<QuestionBank> Questions { get; set; }
+        
     }
 }

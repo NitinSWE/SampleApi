@@ -27,6 +27,12 @@ namespace sampleapi.Data
             if(test == null){
                 throw new ArgumentNullException(nameof(test));
             }
+            //Delete All the Questions of the Test
+            foreach(var question in _context.Questions.Where(o=>o.TestId == test.id ))
+                _context.Questions.Remove(question);
+
+            SaveChanges();
+            //Delete Test
             _context.Tests.Remove(test);
         }
 
@@ -37,7 +43,15 @@ namespace sampleapi.Data
 
         public Test GetTestById(string id)
         {
-            return _context.Tests.FirstOrDefault(p=> p.id == id);//lambda expression to fetch data by ID
+            //Get All the Questions of the TestId
+            /*********DOUBT************/
+            var questionList = new List<QuestionBank>();
+            foreach(var question in _context.Questions.Where(o => o.TestId == id ))
+                questionList.Add(question);
+            //Get Test For the TESTId
+            var testData =  _context.Tests.FirstOrDefault(p=> p.id == id);//lambda expression to fetch data by ID
+            //testData.Questions = questionList;
+            return testData;
         }
 
         public bool SaveChanges()

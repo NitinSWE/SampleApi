@@ -1,0 +1,113 @@
+{
+    "ApiOperations": [
+        {
+            "getAllTests": {
+                "Method": "GET",
+                "URI": "https://localhost:5001/api/tests",
+                "Body": {}
+            }
+        },
+        {
+            "getTestById": {
+                "Method": "GET",
+                "URI": "https://localhost:5001/api/tests/10",
+                "Body": {}
+            }
+        },
+        {
+            "testCreate": {
+                "Method": "POST",
+                "URI": "https://localhost:5001/api/tests",
+                "Body": {
+                    "id": "10",
+                    "testName": "Test10",
+                    "testPurpose": "Purpose10",
+                    "testDuration": "60min",
+                    "Questions": []
+                }
+            }
+        },
+        {
+            "testUpdate": {
+                "Method": "PATCH",
+                "URI": "https://localhost:5001/api/tests/10",
+                "Body": [
+                    {
+                        "op": "replace",
+                        "path": "/testPurpose",
+                        "value": "changePurpose"
+                    },
+                    {
+                        "op": "replace",
+                        "path": "/testName",
+                        "value": "changeName"
+                    },
+                    {
+                        "op": "replace",
+                        "path": "/testDuration",
+                        "value": "changeTimePeriod"
+                    }
+                ]
+            }
+        },
+        {
+            "testAddQuestions": {
+                "Method": "PATCH",
+                "URI": "https://localhost:5001/api/tests/10",
+                "Body": [
+                    {
+                        "op": "add",
+                        "path": "/Questions",
+                        "value": [
+                            {
+                                "QuestionId": "101",
+                                "QuestionType": "Multichoice",
+                                "QuestionTopic": "Physics",
+                                "Question": "Question1",
+                                "Option1": "Option1",
+                                "Option2": "Option2",
+                                "Option3": "Option3",
+                                "Option4": "Option4",
+                                "CorrectAnswer": "0001",
+                                "ScoringPoints": "20",
+                                "DifficultyLevel": "Easy"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "testEditQuestion": {
+                "Method": "PUT",
+                "URI": "https://localhost:5001/api/Questions/71",
+                "Body": {
+                    "questionType": "Multichoice",
+                    "questionTopic": "Hindi",
+                    "question": "Question1",
+                    "option1": "Option1",
+                    "option2": "Option2",
+                    "option3": "Option3",
+                    "option4": "Option4",
+                    "correctAnswer": "0010",
+                    "scoringPoints": "200",
+                    "difficultyLevel": "Medium"
+                }
+            }
+        },
+        {
+            "testDeleteQuestion": {
+                "Method": "DELETE",
+                "URI": "https://localhost:5001/api/Questions/71",
+                "Body": {}
+            }
+        },
+        {
+            "DeleteTest": {
+                "Method": "DELETE",
+                "URI": "https://localhost:5001/api/tests/10",
+                "Body": {}
+            }
+        }
+    ]
+}

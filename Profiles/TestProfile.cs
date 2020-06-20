@@ -13,6 +13,7 @@ namespace sampleapi.Profiles
             CreateMap<TestCreateDto,Test>();
             CreateMap<TestUpdateDto,Test>();
             CreateMap<Test,TestUpdateDto>();
+            CreateMap<QuestionUpdateDto,QuestionBank>();
         }
     }
 }

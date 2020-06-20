@@ -36,7 +36,8 @@ namespace sampleapi.Controllers
         public ActionResult <TestReadDto> GetTestById(string id){
             var testItem = _repository.GetTestById(id);
             if(testItem != null){
-                return Ok(_mapper.Map<TestReadDto>(testItem));
+                return Ok(testItem);
+                //return Ok(_mapper.Map<TestReadDto>(testItem));
             }
             return NotFound();
         }

@@ -1,0 +1,48 @@
+{
+    "id": "7",
+    "testName": "Test7",
+    "testPurpose": "Purpose7",
+    "testDuration": "60min",
+    "Questions":[
+        {
+            "QuestionId" : "71",
+            "QuestionType" : "Multichoice",
+            "QuestionTopic" : "Physics",
+            "Question": "Question1",
+            "Option1" : "Option1",
+            "Option2" : "Option2",
+            "Option3" : "Option3",
+            "Option4" : "Option4",
+            "CorrectAnswer": "0001",
+            "ScoringPoints" : "20",
+            "DifficultyLevel": "Easy"
+        },
+        {
+            "QuestionId" : "72",
+            "QuestionType" : "Checkbox",
+            "QuestionTopic" : "Math",
+            "Question": "Question2",
+            "Option1" : "Option1",
+            "Option2" : "Option2",
+            "Option3" : "Option3",
+            "Option4" : "Option4",
+            "CorrectAnswer": "0101",
+            "ScoringPoints" : "40",
+            "DifficultyLevel": "Hard"
+        },
+        {
+            "QuestionId" : "73",
+            "QuestionType" : "Multichoice",
+            "QuestionTopic" : "Hindi",
+            "Question": "Question3",
+            "Option1" : "Option1",
+            "Option2" : "Option2",
+            "Option3" : "Option3",
+            "Option4" : "Option4",
+            "CorrectAnswer": "0010",
+            "ScoringPoints" : "20",
+            "DifficultyLevel": "Easy"
+        }
+    ]
+
+}
