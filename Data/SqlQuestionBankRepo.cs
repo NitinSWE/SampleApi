@@ -13,13 +13,22 @@ namespace sampleapi.Data
         {
             _context = context;
         }
-        /*public void CreateQuestion(QuestionBank questionBank)
+
+        public void CreateQuestions(QuestionBank questionBank)
         {
             if(questionBank == null){
                 throw new ArgumentNullException(nameof(questionBank));
             }
             _context.Questions.Add(questionBank);
-        }*/
+        }
+
+        /*public void CreateQuestion(QuestionBank questionBank)
+{
+   if(questionBank == null){
+       throw new ArgumentNullException(nameof(questionBank));
+   }
+   _context.Questions.Add(questionBank);
+}*/
 
         public void DeleteQuestion(QuestionBank questionBank)
         {

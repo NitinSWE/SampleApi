@@ -13,6 +13,7 @@ namespace sampleapi.Data
         QuestionBank GetQuestionById(string id);
         //void CreateQuestion(QuestionBank questionBank);
         void UpdateQuestion(QuestionBank questionBank);
+        void CreateQuestions(QuestionBank questionBank);
         void DeleteQuestion(QuestionBank questionBank);
     }
 }

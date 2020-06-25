@@ -30,9 +30,10 @@ namespace sampleapi
         public void ConfigureServices(IServiceCollection services)
         {
             //DB Config
-            services.AddDbContext<TestContext>(opt=>opt.UseSqlServer
+            services.AddDbContext<TestContext>(opt => opt.UseSqlServer
             (Configuration.GetConnectionString("DefaultConnection")));
-            services.AddControllers().AddNewtonsoftJson(s =>{
+            services.AddControllers().AddNewtonsoftJson(s =>
+            {
                 //Config For Patch Operation
                 s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             });
@@ -56,6 +57,12 @@ namespace sampleapi
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors(builder =>{
+                builder.WithOrigins("http://localhost:4200");
+                builder.AllowAnyMethod();
+                builder.AllowAnyHeader();
+            });
 
             app.UseEndpoints(endpoints =>
             {

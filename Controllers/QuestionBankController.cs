@@ -39,7 +39,7 @@ namespace sampleapi.Controllers
 
         //PUT api/Questions/{id}
         [HttpPut("{id}")]
-        public ActionResult UpdateTest(string id,QuestionUpdateDto questionUpdateDto){
+        public ActionResult UpdateQuestion(string id,QuestionUpdateDto questionUpdateDto){
             var questionModelFromRepo = _repository.GetQuestionById(id);
             if(questionModelFromRepo == null){
                 return NotFound();
@@ -48,6 +48,17 @@ namespace sampleapi.Controllers
             _mapper.Map(questionUpdateDto,questionModelFromRepo);
             _repository.UpdateQuestion(questionModelFromRepo);
             _repository.SaveChanges();
+
+            return NoContent(); // status 204
+        }
+
+        //POST api/Questions
+        [HttpPost]
+        public ActionResult AddQuestions(QuestionBank[] questionBanks){
+            for(int i=0;i<questionBanks.Length;i++){
+                _repository.CreateQuestions(questionBanks[i]);
+                _repository.SaveChanges();
+            }
 
             return NoContent(); // status 204
         }
